@@ -1,3 +1,3 @@
 const hoge =()=>{
-    console.log('hoo')
+    console.log('hoo');
 }
