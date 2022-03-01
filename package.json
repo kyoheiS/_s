@@ -17,10 +17,24 @@
     "url": "https://github.com/Automattic/_s/issues"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/runtime": "^7.17.2",
     "@wordpress/scripts": "^19.2.2",
+    "autoprefixer": "^10.4.2",
+    "babel-loader": "^8.2.3",
+    "core-js": "^3.21.1",
+    "cssnano": "^5.0.17",
     "dir-archiver": "^1.1.1",
-    "node-sass": "^7.0.1",
-    "rtlcss": "^3.5.0"
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.7",
+    "postcss-cli": "^9.1.0",
+    "rtlcss": "^3.5.0",
+    "sass": "^1.49.9",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
   },
   "rtlcssConfig": {
     "options": {
@@ -36,11 +50,20 @@
     "map": false
   },
   "scripts": {
-    "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+    "watch": "npm-run-all -s watch:sass -p \"watch:* -- -w\"",
+    "watch:sass": "sass src/sass/style.scss dist/style.css --no-source-map",
+    "watch:postcss": "postcss dist/style.css -o dist/style.min.css",
+    "watch:js": "webpack",
+    "build": "wabpack --mode=production",
     "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
     "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
-  }
+  },
+  "browserslist": [
+    "> 0.25% in JP",
+    "ie >= 11",
+    "not op_mini all"
+  ]
 }
