@@ -183,3 +183,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ *  ai1_wp-migrationでエクスポートする際に、特定のファイル・ディレクトリを除外する関数
+ *  テーマの名前に応じて、_sの部分を変更
+ */
+add_filter('ai1wm_exclude_themes_from_export',
+	function ($exclude_filters){
+		$exclude_filters[] = ['themes/_s/node_modules', 'themes/_s/.npmrc'];
+		return $exclude_filters;
+	}
+);
