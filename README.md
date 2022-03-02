@@ -47,7 +47,7 @@ git-cloneとwp-envで開発環境を整えられる。
 8 directories, 24 files
 ```
 ## 使い方
-1. プロジェクトルートに`theme`ディレクトリと`.wp-env.json`ファイルを作成する。
+1. プロジェクトルートに`themes`ディレクトリと`.wp-env.json`ファイルを作成する。
 2. `themes`直下に任意の名前でクローンする
 3. `npm install`でsass・jsのコンパイルに必要なパッケージをインストール<br>※wp-envがグローバルインストールされていない場合は`npm install -g @wordpress/env`でグローバルに追加
 4. .wp-env.jsonの中身を下記参照で編集
