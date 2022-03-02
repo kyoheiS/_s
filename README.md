@@ -51,8 +51,10 @@ git-cloneとwp-envで開発環境を整えられる。
 2. `themes`直下に任意の名前でクローンする
 3. `npm install`でsass・jsのコンパイルに必要なパッケージをインストール<br>※wp-envがグローバルインストールされていない場合は`npm install -g @wordpress/env`でグローバルに追加
 4. .wp-env.jsonの中身を下記参照で編集
-5. プロジェクトルートで`wp-env start`を実行。成功したらDoneの文言とともに起動しているlocalhostのポートが記入されているのでアクセス。
-6. username: admin password: password でログイン可能
+5. プロジェクトルートで`wp-env start`を実行。
+6. Done が表示されたらwordpress(port:8888)コンテナに入る
+7. chmod -R 777 wp-content を実行。コンテナから出る
+8. localhost:8888/wp-adminにアクセス username: admin password: password でログイン可能
 
 ディレクトリ構成は以下のようになっています。<br>
 ```
