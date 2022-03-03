@@ -190,7 +190,8 @@ if ( class_exists( 'WooCommerce' ) ) {
  */
 add_filter('ai1wm_exclude_themes_from_export',
 	function ($exclude_filters){
-		$exclude_filters[] = ['themes/_s/node_modules', 'themes/_s/.npmrc'];
-		return $exclude_filters;
+		$files = ['_s/node_modules', '_s/.npmrc'];
+		$result = [ ...$exclude_filters, ...$files ];
+		return $result;
 	}
 );
