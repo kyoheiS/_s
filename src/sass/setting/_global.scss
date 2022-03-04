@@ -1,0 +1,8 @@
+/*
+    このファイルはstyle.scssに読み込むのではなく、
+    @use "../setting/global" as *;
+    のような形で各ファイルに読み込ませる。
+*/
+@forward "var";
+@forward "mixin";
+@forward "function";

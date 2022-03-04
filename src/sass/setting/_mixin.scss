@@ -1,0 +1,7 @@
+@use "var" as var;
+
+@mixin mq($target:sp) {
+    @media #{map-get(var.$mdeias, $target)} {
+        @content;
+    }
+}

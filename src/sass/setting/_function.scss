@@ -1,0 +1,4 @@
+//コンパイル前後でパスがずれないための関数
+@function filepath( $filename ){
+    @return url('../src/img/#{ $filename }');
+}

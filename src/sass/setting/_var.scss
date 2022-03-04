@@ -1,0 +1,13 @@
+/*
+    このファイルにはサイトで共通する変数を設定
+*/
+
+//MediaQueryのMixinで使用するキーワードのリスト
+$mdeias: (
+    "xl": "screen and (min-width: 1600px)",
+    "pc": "screen and (min-width: 1025px)",
+    "tab": "screen and (max-width: 1024px)",
+    "sp": "screen and (max-width: 767px)",
+    "xs": "screen and (max-width: 350px)",
+    "ie": "screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none)"
+);
