@@ -60,7 +60,7 @@ git-cloneとdockerで開発環境を整えられる。
 └── docker-compose.yaml
 ```
 
-## .wp-env.jsonの内容
+## docker-compose.ymlの内容
 ```version: '3'
 
 services:
